@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1.css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+      
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+  <title>MyPortfolio</title>
+</head>
+<body>
+  <!--BAR MENU HERE-->
+  <div class="container">
+    <nav class="navbar">
+      <div class="dots">
+        <span class="dot-1"></span>
+        <span class="dot-2"></span>
+        <span class="dot-3"></span>
+      </div>
+      <ul class="top-btn">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills" onClick="Circlle('.round');">SKILLS</a></li>
+      </ul>
+    </nav>
+    <!--HOME SECTION HERE-->
+    <section id="home" class="home">
+        <div class="text-box">
+          <h4>My name is</h4>
+          <h2>JOSHUA PAYORAN</h2>
+          <h1>I'm a <span class="auto-input"></span></h1>
+          <p>Get in touch with me on:</p>
+          <div>
+            <a href="https://www.facebook.com/Imnottshva" target="_blank" class="fb-btn">Facebook</a>
+            <a href="mailto:joshuap.payoran@ctu.edu.ph" class="btn">Email</a>
+        </div>
+      </div>
+      <img src="images/joshua.jpg" alt="Joshua's Photo" class="user-image">
+
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      <script>
+        var typed = new Typed(".auto-input", {
+          strings: ["Computer Engineering Student", "Future Full-Stack Developer", "Chess Player"],
+          typeSpeed: 50,
+          backSpeed: 50,
+          loop: true
+        })
+      </script>
+
+    </section>
+
+    <!--ABOUT SECTION HERE-->
+    <section id="about">
+      <div class="about-main">
+        <img src="images/about2.png" alt="">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <h4>Computer
+            <span>Engineering</span></h4>
+          <p class="dscrb">I am currently taking a Bachelor of Science in Computer Engineering at Cebu Technological University-Main Campus, and I'm 21 years old, I live in Maribago, Lapu-Lapu City, Cebu. Actually becoming a pilot was my first dream career, but unfortunately, because of financial problems, I had to choose an alternative course. Before I got into this course, Aircraft Maintenance, BS Information Technology/Industrial Technology, and BS Computer Engineering are the courses that I had applied for from different schools, luckily I had passed all the exams and interviews, but practically speaking, Computer Engineers will be in high demand for the foreseeable future that is why I chose this field.</p>
+      </div>
+
+    </section>
+
+     <!--SKILL SECTION HERE-->
+    <section id="skills">
+      <h1>My Skills</h1>
+      <p>
+        Programming Languages
+      </p>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="round" data-value="0.40" data-size="200" data-thickness="12">
+              <strong></strong>
+              <span><i class="fa fa-html5"></i>
+                HTML
+              </span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="round" data-value="0.40" data-size="200" data-thickness="12">
+              <strong></strong>
+              <span><i class="fa fa-css3"></i>
+                CSS
+              </span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="round" data-value="0.10" data-size="200" data-thickness="12">
+              <strong></strong>
+              <span><i class="fa fa-jsfiddle"></i>
+                JavaScript
+              </span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="round" data-value="0.55" data-size="200" data-thickness="12">
+              <strong></strong>
+              <span><i class="fa fa-code"></i>
+                C
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.0/circle-progress.min.js"></script>
+
+      <script>
+
+        function Circlle(el){
+          $(el).circleProgress({fill: {color: '#ff5c5c'}})
+          .on('circle-animation-progress', function(event, progress, stepValue){
+            $(this).find('strong').text(String(stepValue.toFixed(2)).substr(2)+'%');
+          });
+        };
+
+        Circlle('.round');
+
+
+
+      </script>
+
+    </section>
+
+    <footer>
+      <p class="end">&copy;Copyright by Joshua Payoran</p>
+    </footer>
+
+  </div>
+</body>
+</html>
